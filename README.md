@@ -24,14 +24,16 @@ A minimal command‑line chat client that calls OpenAI's Chat Completions API an
 1. Install Dart (if you don’t have it): https://dart.dev/get-dart
 2. Clone this repository and open it in your terminal.
 3. Install dependencies:
+
    ```bash
-dart pub get
-```
+   dart pub get
+
 4. Create a `.env` file in the project root with your API key:
-   ```env
-API_KEY=sk-your-openai-key
-```
-   Notes:
+
+   ```bash
+   API_KEY=sk-your-openai-key
+
+###   Notes:
    - The program reads `.env` from the current working directory (`Directory.current`). If you run the app from elsewhere, ensure the `.env` is in that working directory or adjust how you launch it.
 
 ## Running the App
@@ -39,7 +41,7 @@ API_KEY=sk-your-openai-key
 Run from the project root (recommended so `.env` is discovered):
 
 ```bash
-dart run bin/ai_moderated_chat.dart
+   dart run bin/ai_moderated_chat.dart
 ```
 
 You will be prompted to enter a message. Type `exit` to quit.
@@ -61,41 +63,6 @@ Environment variables (via `.env`):
 
 Moderation list:
 - You can update `bannedKeywords` in `lib/moderation.dart` to refine the moderation policy.
-
-## Scripts and Useful Commands
-
-- Install dependencies:
-  ```bash
-dart pub get
-```
-- Run the app:
-  ```bash
-dart run bin/ai_moderated_chat.dart
-```
-- Run tests:
-  ```bash
-dart test
-```
-- Static analysis (uses `analysis_options.yaml` with `lints`):
-  ```bash
-dart analyze
-```
-- Format code:
-  ```bash
-dart format .
-```
-
-Note: There are no custom `pub` run scripts configured in `pubspec.yaml` at this time.
-
-## Tests
-
-- Test framework: `package:test`.
-- Current state: `test/ai_moderated_chat_test.dart` contains a commented sample test. You can add tests around moderation utilities (e.g., `containsBannedWord`, `redactBannedWords`).
-
-Run the test suite:
-```bash
-dart test
-```
 
 ## Project Structure
 
